@@ -5,7 +5,6 @@ public class Test {
     public final static int NUM_OF_SECONDS = 5000;
 
     public static void main(String[] args) throws Exception {
-
         // Creates a new smart home object
         SmartHome smartHome = new SmartHome();
 
