@@ -1,4 +1,6 @@
 // This is a subclass of SmartObjects class and instance of MotionControl and Comparable interfaces.
+package src;
+
 public class SmartCamera extends SmartObject implements MotionControl, Comparable<SmartCamera> {
     private boolean status;
     private int batteryLife;
@@ -13,9 +15,11 @@ public class SmartCamera extends SmartObject implements MotionControl, Comparabl
 
     // This method starts the recording according to isDay and nightVision.
     public void recordOn(boolean isDay) {
-        // Firstly we control the connection status of the any smart object in all objects' methods.
+        // Firstly we control the connection status of the any smart object in all
+        // objects' methods.
         if (super.isConnectionStatus()) {
-            // This if condition check isDay. If isDay is false than another if statement checks the night vision feature.
+            // This if condition check isDay. If isDay is false than another if statement
+            // checks the night vision feature.
             if (isDay) {
                 if (status) {
                     System.out.println("Smart Camera - " + getAlias() + " has been already turned on");
@@ -38,7 +42,6 @@ public class SmartCamera extends SmartObject implements MotionControl, Comparabl
         }
     }
 
-
     // This method stops the recording.
     public void recordOff() {
         if (super.isConnectionStatus()) {
@@ -57,7 +60,8 @@ public class SmartCamera extends SmartObject implements MotionControl, Comparabl
         if (super.isConnectionStatus()) {
             System.out.println("Test is starting for SmartCamera");
 
-            // Firstly, we call the superclass's SmartObjectToString method because of printing the object's name and ip.
+            // Firstly, we call the superclass's SmartObjectToString method because of
+            // printing the object's name and ip.
             super.SmartObjectToString();
 
             // Second, we run the camera at day time.
@@ -90,7 +94,8 @@ public class SmartCamera extends SmartObject implements MotionControl, Comparabl
         }
     }
 
-    // This method calls from MotionControl interface and check the motion according to isDay and nightVision.
+    // This method calls from MotionControl interface and check the motion according
+    // to isDay and nightVision.
     @Override
     public boolean controlMotion(boolean hasMotion, boolean isDay) {
         if (hasMotion) {

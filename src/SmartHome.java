@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -8,7 +10,8 @@ public class SmartHome {
     public SmartHome() {
     }
 
-    // With this method we add new objects and then print their testObject method which is abstract method in SmartObject class.
+    // With this method we add new objects and then print their testObject method
+    // which is abstract method in SmartObject class.
     public void addSmartObject(SmartObject smartObject) {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("--------------------------------------------------------------------------");
@@ -25,7 +28,8 @@ public class SmartHome {
         return smartObjectList.remove(smartObject);
     }
 
-    // With this method we test the location with LocationControl interface's onCome and onLeave methods.
+    // With this method we test the location with LocationControl interface's onCome
+    // and onLeave methods.
     public void controlLocation(boolean onCome) {
         if (onCome) {
             System.out.println("--------------------------------------------------------------------------");
@@ -50,7 +54,8 @@ public class SmartHome {
         }
     }
 
-    // With this method we test the motion with MotionControl interface's controlMotion method.
+    // With this method we test the motion with MotionControl interface's
+    // controlMotion method.
     public void controlMotion(boolean hasMotion, boolean isDay) {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("--------------------------------------------------------------------------");
@@ -64,7 +69,8 @@ public class SmartHome {
         }
     }
 
-    // If an object is programmable, we test that with Programmable interface's runProgram method.
+    // If an object is programmable, we test that with Programmable interface's
+    // runProgram method.
     public void controlProgrammable() {
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("--------------------------------------------------------------------------");

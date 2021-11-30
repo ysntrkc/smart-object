@@ -1,3 +1,5 @@
+package src;
+
 public abstract class SmartObject {
     private String alias;
     private String macId;

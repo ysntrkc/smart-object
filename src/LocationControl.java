@@ -1,3 +1,5 @@
+package src;
+
 public interface LocationControl {
 
     // Here we create abstract methods in an interface.

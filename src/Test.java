@@ -1,3 +1,5 @@
+package src;
+
 public class Test {
     public final static boolean onCome = true;
     public final static boolean isDay = true;
@@ -18,11 +20,11 @@ public class Test {
         SmartPlug livingRoomPlug1 = new SmartPlug("Living Room Plug 1", "DD:GG:FF");
         SmartPlug livingRoomPlug2 = new SmartPlug("Living Room Plug 2 ", "DD:EE:FF");
 
-        // Creates three smart camera objects with the given aliases, macIds, nightVision properties, and battery life amounts
+        // Creates three smart camera objects with the given aliases, macIds,
+        // nightVision properties, and battery life amounts
         SmartCamera gardenCam = new SmartCamera("Garden Cam", "GG:HH:II", true, 60);
         SmartCamera childRoomCam = new SmartCamera("Child Room Cam", "JJ:KK:LL", false, 30);
         SmartCamera gateCam = new SmartCamera("Gate Cam", "MM:NN:SS", true, 50);
-
 
         // Add these smart objects to the smartHome
         smartHome.addSmartObject(livingRoomLight);
@@ -37,38 +39,34 @@ public class Test {
         smartHome.addSmartObject(childRoomCam);
         smartHome.addSmartObject(gateCam);
 
-        //Invoke controlLocation method of smartHome with the given onCome = true.
+        // Invoke controlLocation method of smartHome with the given onCome = true.
         // You can also invoke this method as --> smartHome.controlLocation(!onCome);
         smartHome.controlLocation(onCome);
 
-
-        //Invoke controlMotion method of smartHome with the given hasMotion = true and isDay = true.
-        // You can also invoke this method as --> smartHome.controlMotion(!hasMotion, !isDay);
+        // Invoke controlMotion method of smartHome with the given hasMotion = true and
+        // isDay = true.
+        // You can also invoke this method as --> smartHome.controlMotion(!hasMotion,
+        // !isDay);
         smartHome.controlMotion(hasMotion, isDay);
 
-
-        //Invoke controlTimerRandomly method of smartHome
-        // You can also invoke the method  --> smartHome.controlTimer(10);
+        // Invoke controlTimerRandomly method of smartHome
+        // You can also invoke the method --> smartHome.controlTimer(10);
         smartHome.controlTimerRandomly();
 
-        //the system is sleeping for 5 seconds
+        // the system is sleeping for 5 seconds
         sleepSystem();
 
-
-        //Invoke controlProgrammable method of smartHome
+        // Invoke controlProgrammable method of smartHome
         smartHome.controlProgrammable();
 
-        //the system is sleeping for another 5 seconds
+        // the system is sleeping for another 5 seconds
         sleepSystem();
 
-
-        //Invoke controlProgrammable method of smartHome
+        // Invoke controlProgrammable method of smartHome
         smartHome.controlProgrammable();
 
-
-        //Invoke sortCameras method of smartHome
+        // Invoke sortCameras method of smartHome
         smartHome.sortCameras();
-
 
         System.out.println("System exiting..");
 

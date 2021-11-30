@@ -1,3 +1,5 @@
+package src;
+
 public interface Programmable {
 
     // Here we create abstract method in an interface.

@@ -1,3 +1,5 @@
+package src;
+
 public interface MotionControl {
 
     // Here we create abstract method in an interface.

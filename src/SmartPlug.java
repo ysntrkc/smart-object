@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Calendar;
 
 // This class is a subclass of SmartObject class and instance of Programmable interface.
@@ -13,13 +15,15 @@ public class SmartPlug extends SmartObject implements Programmable {
 
     // This method turns on the plug if it isn't turned on already.
     public void turnOn() {
-        // Firstly we control the connection status of the any smart object in all objects' methods.
+        // Firstly we control the connection status of the any smart object in all
+        // objects' methods.
         if (super.isConnectionStatus()) {
             if (status) {
                 System.out.println("Smart Plug - " + getAlias() + " has been already turned on");
             } else {
                 Calendar currentTime = Calendar.getInstance();
-                System.out.printf("Smart Plug - " + getAlias() + " is turned on now (Current time: %tT)%n", currentTime);
+                System.out.printf("Smart Plug - " + getAlias() + " is turned on now (Current time: %tT)%n",
+                        currentTime);
                 setStatus(true);
             }
         }
@@ -32,14 +36,15 @@ public class SmartPlug extends SmartObject implements Programmable {
                 System.out.println("Smart Plug - " + getAlias() + " has been already turned off");
             } else {
                 Calendar currentTime = Calendar.getInstance();
-                System.out.printf("Smart Plug - " + getAlias() + " is turned off now (Current time: %tT)%n", currentTime);
+                System.out.printf("Smart Plug - " + getAlias() + " is turned off now (Current time: %tT)%n",
+                        currentTime);
                 setStatus(false);
             }
         }
     }
 
-
-    // This override method test the object with turning on and turning off the plug.
+    // This override method test the object with turning on and turning off the
+    // plug.
     @Override
     public boolean testObject() {
         if (super.isConnectionStatus()) {
@@ -70,17 +75,21 @@ public class SmartPlug extends SmartObject implements Programmable {
     @Override
     public void setTimer(int seconds) {
         if (super.isConnectionStatus()) {
-            // Here we creates two Calendar object and adds the timer's second to programTime.
+            // Here we creates two Calendar object and adds the timer's second to
+            // programTime.
             Calendar currentTime = Calendar.getInstance();
             programTime = Calendar.getInstance();
             programTime.add(Calendar.SECOND, seconds);
 
-            // This if statement checks the smart plug's status and prints what do it do when the program time come.
+            // This if statement checks the smart plug's status and prints what do it do
+            // when the program time come.
             if (status) {
-                System.out.printf("Smart Plug - " + getAlias() + " will be turned off " + seconds + " seconds later! (Current time: %tT)%n", currentTime);
+                System.out.printf("Smart Plug - " + getAlias() + " will be turned off " + seconds
+                        + " seconds later! (Current time: %tT)%n", currentTime);
                 setProgramAction(false);
             } else {
-                System.out.printf("Smart Plug - " + getAlias() + " will be turned on " + seconds + " seconds later! (Current time: %tT)%n", currentTime);
+                System.out.printf("Smart Plug - " + getAlias() + " will be turned on " + seconds
+                        + " seconds later! (Current time: %tT)%n", currentTime);
                 setProgramAction(true);
             }
         }
@@ -102,7 +111,8 @@ public class SmartPlug extends SmartObject implements Programmable {
             try {
                 // Whit this if statement we check what we have to do.
                 if (isProgramAction()) {
-                    // If currentTime and programTime is equal to each other than we can do the action.
+                    // If currentTime and programTime is equal to each other than we can do the
+                    // action.
                     if (currentTime.get(Calendar.SECOND) == programTime.get(Calendar.SECOND)
                             && currentTime.get(Calendar.MINUTE) == programTime.get(Calendar.MINUTE)
                             && currentTime.get(Calendar.HOUR_OF_DAY) == programTime.get(Calendar.HOUR_OF_DAY)) {
@@ -111,7 +121,8 @@ public class SmartPlug extends SmartObject implements Programmable {
                         programTime = null;
                     }
                 } else {
-                    // If currentTime and programTime is equal to each other than we can do the action.
+                    // If currentTime and programTime is equal to each other than we can do the
+                    // action.
                     if (currentTime.get(Calendar.SECOND) == programTime.get(Calendar.SECOND)
                             && currentTime.get(Calendar.MINUTE) == programTime.get(Calendar.MINUTE)
                             && currentTime.get(Calendar.HOUR_OF_DAY) == programTime.get(Calendar.HOUR_OF_DAY)) {
