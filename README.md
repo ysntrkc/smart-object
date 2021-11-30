@@ -2,7 +2,7 @@
 
 This is my homework from programming 2 course.
 
-In order to run this program, you need to run the following command on the terminal:
+In order to run this program, you need to type the following command on the terminal:
 ```
 javac src/Test.java
 ```
